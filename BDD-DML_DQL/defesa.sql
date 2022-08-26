@@ -9,8 +9,8 @@ create table forca_armada (
     
 create table patente (
 	id_patente int not null auto_increment primary key,
-    nome varchar(30) not null,
-    sigla varchar(3) not null,
+    nome varchar(60) not null,
+    sigla varchar(8) not null,
     tipo char(1) not null
     check(tipo='P' or tipo='G')
 );
@@ -22,6 +22,12 @@ create table forca_patente (
     foreign key (id_forca) references forca_armada(id_forca_armada),
     foreign key (id_patente) references patente(id_patente)
 );
+
+desc forca_armada;
+
+desc patente;
+
+desc forca_patente;
 
 # DML
 
@@ -73,3 +79,11 @@ insert into patente (nome, sigla, tipo) values
     ("taifeiro de primeira classe", "T1", "G"),
     ("taifeiro de segunda classe", "T2", "G")
 ;
+
+# DQL
+
+select * from forca_armada;
+
+select * from patente;
+
+select * from forca_patente;
