@@ -25,13 +25,13 @@ create table forca_patente (
 
 # DML
 
-insert into forca_armada values (
-	"exercito",
-	"marinha",
-    "aeronautica"
-);
+insert into forca_armada (nome) values 
+	("exercito"),
+    ("aeronautica"),
+	("marinha");
+    
 
-insert into patente values 
+insert into patente (nome, sigla, tipo) values 
 	("almirante", "Alte", "P"),
 	("almirante de esquadra", "AE", "P"),
 	("vice-almirante", "VA", "P"),
