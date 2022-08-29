@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Prática 1</title>
+</head>
+<body>
+    <div class="container">
+
+        <main class="infos">
+            <div class="main-container">
+                <h2>Usuários</h2>
+                <img src="./personas.png" alt="personas">
+                <div>
+                    <table class="tabela">
+                        <thead>
+                            <th>Nome</th>
+                            <th>Data Nascimento</th>
+                            <th>Nacionalidade</th>
+                            <th>Profissão</th>
+                        </thead>
+                        <tbody id="tabela-users">
+                            <td>Teste</td>
+                            <td>17/11/1995</td>
+                            <td>Brasil</td>
+                            <td>TI</td>
+                        </tbody>
+                    </table>
+                    
+
+                </div>
+
+            </div>
+            
+
+        </main>
+
+        <div class="inputs">
+            <form action="" class="formulario">
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu Nome">
+                <label for="nasc">Data Nascimento: </label>
+                <input type="text" name="nasc" id="nasc" placeholder="XX/XX/XXXX">
+                <label for="nac">Nacionalidade: </label>
+                <input type="text" name="nac" id="nac" placeholder="Digite sua Nacionalidade">
+                <label for="prof">Profissão: </label>
+                <input type="text" name="prof" id="prof" placeholder="Digite sua Profissão">
+                <button type="button" onclick="saveUser()">Cadastrar</button>
+            </form>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
