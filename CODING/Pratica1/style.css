@@ -37,15 +37,18 @@ body {
     border-radius: 5px;
 }
 
-.tabela {
-    width: 80%;
-    margin: auto;
-    
+.info-users-head {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
 }
 
-.tabela th {
-    font-size: 1.1em;
+.info-users-body {
+    border: 1px solid seagreen;
+    display: flex;
+    justify-content: space-around;
 }
+
 
 .inputs {
     width: 30%;

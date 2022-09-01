@@ -14,41 +14,60 @@
             <div class="main-container">
                 <h2>Usuários</h2>
                 <img src="./personas.png" alt="personas">
-                <div>
-                    <table class="tabela">
-                        <thead>
-                            <th>Nome</th>
-                            <th>Data Nascimento</th>
-                            <th>Nacionalidade</th>
-                            <th>Profissão</th>
-                        </thead>
-                        <tbody id="tabela-users">
-                            <td>Teste</td>
-                            <td>17/11/1995</td>
-                            <td>Brasil</td>
-                            <td>TI</td>
-                        </tbody>
-                    </table>
-                    
-
+                <div class="info-users-head">    
+                    <h4>Nome</h4>
+                    <h4>Data Nascimento</h4>
+                    <h4>Nacionalidade</h4>
+                    <h4>Profissão</h4>
                 </div>
 
+                <div id="info-users-main">
+                    <div class="info-users-body">
+                        <p>Teste</p>
+                        <p>17/11/1995</p>
+                        <p>Brasil</p>
+                        <p>TI</p>
+                    </div>
+                    
+                </div>
             </div>
-            
-
         </main>
 
         <div class="inputs">
             <form action="" class="formulario">
                 <label for="nome">Nome: </label>
-                <input type="text" name="nome" id="nome" placeholder="Digite seu Nome">
+                <input 
+                    type="text" 
+                    name="nome" 
+                    id="nome" 
+                    placeholder="Digite seu Nome"
+                >
+                
                 <label for="nasc">Data Nascimento: </label>
-                <input type="text" name="nasc" id="nasc" placeholder="XX/XX/XXXX">
+                <input 
+                    type="text" 
+                    name="nasc" 
+                    id="nasc" 
+                    placeholder="XX/XX/XXXX"
+                >
+                
                 <label for="nac">Nacionalidade: </label>
-                <input type="text" name="nac" id="nac" placeholder="Digite sua Nacionalidade">
+                <input 
+                    type="text" 
+                    name="nac" 
+                    id="nac" 
+                    placeholder="Digite sua Nacionalidade"
+                >
+                
                 <label for="prof">Profissão: </label>
-                <input type="text" name="prof" id="prof" placeholder="Digite sua Profissão">
-                <button type="button" onclick="saveUser()">Cadastrar</button>
+                <input 
+                    type="text" 
+                    name="prof" 
+                    id="prof" 
+                    placeholder="Digite sua Profissão"
+                >
+                
+                <button type="button" onclick="registerUser()">Cadastrar</button>
             </form>
         </div>
 

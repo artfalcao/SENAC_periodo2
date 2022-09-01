@@ -7,28 +7,41 @@ let users = [
     }
 ]
 
-function saveUser() {
+function registerUser() {
     const $userName = document.getElementById('nome').value
     const $nasc = document.getElementById('nasc').value
     const $nac = document.getElementById('nac').value
     const $prof = document.getElementById('prof').value
-    const $tabelaUsers = document.getElementById('tabela-users')
-
+    const $tabelaUsers = document.getElementById('info-users-main')
+    
+    //CREATE
     users.push({
         nome: $userName,
         nasc: $nasc,
         nasc: $nac,
         prof: $prof
     })
-
-    let i = users.length -1
-
-    console.log(users[i].nome, users[i].nasc, users[i].nac, users[i].prof)
     
+    localStorage.setItem("info-users-main", JSON.stringify(users))
+
+    //UPDATE
     $tabelaUsers.innerHTML += `
-        <td>${users[i].nome}</td>
-        <td>${users[i].nac}</td>
-        <td>${users[i].nasc}</td>
-        <td>${users[i].prof}</td>
-    `  
+    <div class="info-users-body">
+        <p>${$userName}</p>
+        <p>${$nasc}</p>
+        <p>${$nac}</p>
+        <p>${$prof}</p>
+    </div>
+    `
+    
+    //READ
+    return localStorage.info-users-main ? JSON.parse(localStorage.info-users-main) : []
+    
+    
+        
+
+    
+     
 }
+
+
