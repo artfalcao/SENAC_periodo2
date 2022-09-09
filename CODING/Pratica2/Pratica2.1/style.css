@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Abel', sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.main-header {
+    height: 50px;
+    margin-bottom: 5px;
+    line-height: 50px;
+}
+
+.navegation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.navegation a {
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.navegation a:hover {
+    background-color: black;
+    color: white;
+}
+
+.infos-princ {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    margin-top: 15px;
+}
+
+.infos-princ-img img {
+    width: 250px;
+    border-radius: 50%;
+}
+
+.infos-princ-contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 100px;
+}
+
+.infos-formacao {
+    width: 100%;
+    height: 120px;
+    margin-top: 20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.infos-formacao-titulos{
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 10px;
+}
+
+.infos-formacao-experiencia{
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.infos-formacao-cursos{
+    height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.infos-formacao-habilidades{
+    height: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.infos-formacao-hab{
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10px;
+}
