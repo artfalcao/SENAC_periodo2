@@ -1,5 +1,9 @@
+span {
+    color: blue;
+}
+
 .container {
-    height: 95vh;
+    height: 92vh;
     width: 40vw;
     margin: 0 auto;
     border: .2em black solid;
@@ -18,7 +22,8 @@
 .flex div {
     display: flex;
     align-items: center;
-    width: 130px;
+    width: 150px;
+    margin-right: 10px;
 }
 
 .btn {
@@ -39,4 +44,10 @@
 
 #btn-sub {
     margin-right: 10px;
+}
+
+#inf {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
 }
