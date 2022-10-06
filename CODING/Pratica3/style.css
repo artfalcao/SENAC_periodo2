@@ -1,7 +1,13 @@
 .container {
-    height: 80vh;
+    height: 95vh;
     width: 40vw;
     margin: 0 auto;
+    border: .2em black solid;
+    border-radius: 5px;
+}
+
+.container legend {
+    font-size: 1.2em;
 }
 
 .flex {
@@ -13,6 +19,22 @@
     display: flex;
     align-items: center;
     width: 130px;
+}
+
+.btn {
+    width: 100px;
+    height: 35px;
+    background-color: #fff;
+    color: #000;
+    border: .1em solid black;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 #btn-sub {
