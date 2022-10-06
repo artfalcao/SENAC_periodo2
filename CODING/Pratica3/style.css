@@ -1,0 +1,20 @@
+.container {
+    height: 80vh;
+    width: 40vw;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    margin-top: 1em;
+}
+
+.flex div {
+    display: flex;
+    align-items: center;
+    width: 130px;
+}
+
+#btn-sub {
+    margin-right: 10px;
+}
