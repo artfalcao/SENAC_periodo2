@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    <fieldset>
+    <fieldset class="container">
         <legend>Formulário de Freelancer</legend>
-        <div>
-            <label for="nome">Nome</label>
+        <div class="flex">
+            <div>
+                <label for="nome">Nome</label>
+            </div>
+            
             <input 
                 type="text" 
                 name="nome"
@@ -19,8 +23,11 @@
             >
         </div>
 
-        <div>
-            <label for="sobrenome">Sobrenome</label>
+        <div class="flex">
+            <div>
+                <label for="sobrenome">Sobrenome</label>
+            </div>
+            
             <input 
                 type="text" 
                 name="sobrenome" 
@@ -29,8 +36,11 @@
             >
         </div>
 
-        <div>
-            <label for="tel">Telefone</label>
+        <div class="flex">
+            <div>
+                <label for="tel">Telefone</label>
+            </div>
+            
             <input 
                 type="tel" 
                 name="tel" 
@@ -39,8 +49,11 @@
             >
         </div>
 
-        <div>
-            <label for="email">E-mail</label>
+        <div class="flex">
+            <div>
+                <label for="email">E-mail</label>
+            </div>
+            
             <input 
                 type="email" 
                 name="email" 
@@ -49,19 +62,25 @@
             >
         </div>
 
-        <div>
-            <label for="msg">Mensagem</label>
+        <div class="flex">
+            <div>
+                <label for="msg">Mensagem</label>
+            </div>
+            
             <textarea 
                 name="msg" 
-                id="" 
+                id="msg" 
                 cols="80" 
                 rows="5"
                 placeholder="Informe o que deseja"
             ></textarea>
         </div>
 
-        <div>
-            <label for="lingua">Língua</label>
+        <div class="flex">
+            <div>
+                <label for="lingua">Língua</label>
+            </div>
+            
             <select name="lingua" id="lingua">
                 <option value="port" selected>Português (pt-br)</option>
                 <option value="ing">Inglês</option>
@@ -70,8 +89,11 @@
             </select>
         </div>
 
-        <div>
-            <label for="proposito">Propópsito (Requisitos)</label>
+        <div class="flex">
+            <div>
+                <label for="proposito">Propópsito (Requisitos)</label>
+            </div>
+            
             <input 
                 type="file" 
                 name="file" 
@@ -79,13 +101,19 @@
             >
         </div>
 
-        <div>
-            <label for="linguagens">As linguagens que você prefere?</label>
+        <div class="flex">
+            <div>
+                <label for="linguagens">As linguagens que você prefere?</label>
+            </div>
+            
             
         </div>
 
-        <div>
-            <label for="db">Banco de Dados</label>
+        <div class="flex">
+            <div>
+                <label for="db">Banco de Dados</label>
+            </div>
+            
             <input type="radio" name="db" value="mysql" checked>MySQL | 
             <input type="radio" name="db" value="postgress">PostgreSQL | 
             <input type="radio" name="db" value="mongodb">MongoDB | 
@@ -93,23 +121,40 @@
             <input type="radio" name="db" value="outra">Outra
         </div>
 
-        <div>
-            <label for="turno_reuniao">Turno para Reuniões</label>
-            <input type="checkbox" name="turno_reuniao" id="turno_reuniao">Manhã | 
-            <input type="checkbox" name="turno_reuniao" id="turno_reuniao">Tarde |
-            <input type="checkbox" name="turno_reuniao" id="turno_reuniao">Noite 
+        <div class="flex">
+            <div>
+                <label for="turno_reuniao">Turno para Reuniões</label>
+            </div>
+            
+            <input type="checkbox" name="turno_reuniao"  id="turno_manha">Manhã | 
+            <input type="checkbox" name="turno_reuniao"  id="turno_tarde">Tarde |
+            <input type="checkbox" name="turno_reuniao"  id="turno_noite">Noite 
         </div>
 
-        <div>
-            <label for="horario">Horário Sugerido</label>
+        <div class="flex">
+            <div>
+                <label for="horario">Horário Sugerido</label>
+            </div>
+            
             <input type="time" name="horario" id="horario">
         </div>
 
-        <div>
-            <label for="data">Data Prevista Entrega</label>
+        <div class="flex">
+            <div>
+                <label for="data">Data Prevista Entrega</label>
+            </div>
+            
             <input type="date" name="data" id="data">
         </div>
+
+        <div class="flex">
+            <button type="submit" id="btn-sub" onclick="saveData()"> Enviar</button>
+            <button id="btn-clear" onclick="clearData()">Limpar</button>
+        </div>
     </fieldset>
+
+
+    <script src="script.js"></script>
     
 </body>
 </html>
