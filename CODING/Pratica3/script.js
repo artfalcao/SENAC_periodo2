@@ -8,39 +8,51 @@ const elements = {
     proposito: document.getElementById("file"),
     linguagem: document.getElementById("linguagem"),
     db: document.getElementsByName("db"),
-    turnoReuniao: document.getElementsByName("turno_reuniao"),
+    turnoReuniao: document.querySelector('input[type="checkbox"]:checked'),
     horario: document.getElementById("horario"),
     data: document.getElementById("data")
 }
 
 
-function saveData() {
-    //Salvando alguns dados
+function validateData() {
+
+}
+
+
+function saveData(event) {
+
+    event.preventDefault()
+    
     let nome = elements.nome.value
     let sobrenome = elements.sobrenome.value
-    let lingua = elements.lingua.value
-    let horario = elements.horario.value
-    let db = elements.db
-    let dbValue;
-    //Para saber qual radioButton foi selecionado
-    for (let i = 0; i < db.length; i++){
-        if(db[i].checked){
-            dbValue = db[i].value;
-        }
-    }
+    let telefone = elements.telefone.value
+    let email = elements.email.value
+    let mensagem = elements.mensagem.value
+    //let turnoReuniao = elements.turnoReuniao
+    let data = elements.data.value
+
 
     let freela = {
         "nome": nome,
         "sobrenome": sobrenome,
-        "lingua": lingua,
-        "horario": horario,
-        "db": dbValue
+        "telefone": telefone,
+        "email": email,
+        "mensagem": mensagem,
+        //"turnoReuniao": turnoReuniao,
+        "data": data
     }
-    
-    //Salvando no localStorage
+
+    //Salvando campos obrigratórios no localStorage
     localStorage.setItem(`${nome} ${sobrenome}`, JSON.stringify(freela))
 }
 
-function clearData() {
 
+function clearData(event) {
+
+    const form = document.querySelector("form")
+
+    event.preventDefault()
+
+    form.reset()
+    
 }
