@@ -14,15 +14,8 @@ const elements = {
 }
 
 
-function validateData() {
+function saveData() {
 
-}
-
-
-function saveData(event) {
-
-    event.preventDefault()
-    
     let nome = elements.nome.value
     let sobrenome = elements.sobrenome.value
     let telefone = elements.telefone.value
@@ -31,27 +24,47 @@ function saveData(event) {
     //let turnoReuniao = elements.turnoReuniao
     let data = elements.data.value
 
+    /*
+    console.log(nome)
+    console.log(sobrenome)
+    console.log(telefone)
+    console.log(email)
+    console.log(mensagem)
+    console.log(data)
+    */
+    try {
+        /* VALIDAÇÕES */
 
-    let freela = {
-        "nome": nome,
-        "sobrenome": sobrenome,
-        "telefone": telefone,
-        "email": email,
-        "mensagem": mensagem,
-        //"turnoReuniao": turnoReuniao,
-        "data": data
+        // 1- Campos Vazios
+        if (nome == '' || sobrenome == '' || telefone == '' || email == '' || mensagem == '' || data == '' ) {
+            throw "Campos Obrigatórios Vazios"
+        }
+
+
+        /* SALVAR DADOS */
+        let freela = {
+            "nome": nome,
+            "sobrenome": sobrenome,
+            "telefone": telefone,
+            "email": email,
+            "mensagem": mensagem,
+            //"turnoReuniao": turnoReuniao,
+            "data": data
+        }
+        
+        localStorage.setItem(`${nome} ${sobrenome}`, JSON.stringify(freela))
+        
+    } catch (error) {
+        alert(error) 
     }
-
-    //Salvando campos obrigratórios no localStorage
-    localStorage.setItem(`${nome} ${sobrenome}`, JSON.stringify(freela))
+    
+    
 }
 
 
-function clearData(event) {
+function clearData() {
 
     const form = document.querySelector("form")
-
-    event.preventDefault()
 
     form.reset()
     
