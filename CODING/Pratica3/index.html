@@ -10,159 +10,161 @@
 <body>
     <fieldset class="container">
         <legend>Formulário de Freelancer</legend>
-        <div class="flex">
-            <div>
-                <label for="nome">Nome</label>
+        <form>
+            <div class="flex">
+                <div>
+                    <label for="nome">Nome</label>
+                    <span>*</span>
+                </div>
+                
+                <input 
+                    type="text" 
+                    name="nome"
+                    id="nome"
+                    placeholder="Insira seu nome"
+                >
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="sobrenome">Sobrenome</label>
+                    <span>*</span>
+                </div>
+                
+                <input 
+                    type="text" 
+                    name="sobrenome" 
+                    id="sobrenome"
+                    placeholder="Insira seu sobrenome"
+                >
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="tel">Telefone</label>
+                    <span>*</span>
+                </div>
+                
+                <input 
+                    type="tel" 
+                    name="tel" 
+                    id="tel"
+                    placeholder="(99) 9 9999-9999"    
+                >
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="email">E-mail</label>
+                    <span>*</span>
+                </div>
+                
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="email"
+                    placeholder="Insira seu email"    
+                >
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="msg">Mensagem</label>
+                    <span>*</span>
+                </div>
+                
+                <textarea 
+                    name="msg" 
+                    id="msg" 
+                    cols="80" 
+                    rows="5"
+                    placeholder="Informe o que deseja"
+                ></textarea>
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="lingua">Língua</label>
+                </div>
+                
+                <select name="lingua" id="lingua">
+                    <option value="pt" selected>Português (pt-br)</option>
+                    <option value="ing">Inglês</option>
+                    <option value="esp">Espanhol</option>
+                    <option value="fr">Francês</option>
+                </select>
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="proposito">Propópsito (Requisitos)</label>
+                </div>
+                
+                <input 
+                    type="file" 
+                    name="file" 
+                    id="file"
+                >
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="linguagens">As linguagens que você prefere?</label>
+                </div>
+                
+                
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="db">Banco de Dados</label>
+                </div>
+                
+                <input type="radio" name="db" value="mysql" checked>MySQL | 
+                <input type="radio" name="db" value="postgress">PostgreSQL | 
+                <input type="radio" name="db" value="mongodb">MongoDB | 
+                <input type="radio" name="db" value="n/a">N/A | 
+                <input type="radio" name="db" value="outra">Outra
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="turno_reuniao">Turno para Reuniões</label>
+                    <span>*</span>
+                </div>
+                
+                <input type="checkbox" name="turno_reuniao" value="manhã" key="manha">Manhã | 
+                <input type="checkbox" name="turno_reuniao" value="tarde" key="manha">Tarde |
+                <input type="checkbox" name="turno_reuniao" value="noite" key="manha">Noite 
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="horario">Horário Sugerido</label>
+                </div>
+                
+                <input type="time" name="horario" id="horario">
+            </div>
+    
+            <div class="flex">
+                <div>
+                    <label for="data">Data Prevista Entrega</label>
+                    <span>*</span>
+                </div>
+                
+                <input type="date" name="data" id="data">
+            </div>
+    
+            <div class="flex">
+                <button type="submit" id="btn-sub" class="btn" onclick="saveData()"> Enviar</button>
+                <button id="btn-clear" class="btn" onclick="clearData()">Limpar</button>
+            </div>
+    
+            <div id="inf">
                 <span>*</span>
+                <p>Campos Obrigatórios</p>
             </div>
-            
-            <input 
-                type="text" 
-                name="nome"
-                id="nome"
-                placeholder="Insira seu nome"
-            >
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="sobrenome">Sobrenome</label>
-                <span>*</span>
-            </div>
-            
-            <input 
-                type="text" 
-                name="sobrenome" 
-                id="sobrenome"
-                placeholder="Insira seu sobrenome"
-            >
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="tel">Telefone</label>
-                <span>*</span>
-            </div>
-            
-            <input 
-                type="tel" 
-                name="tel" 
-                id="tel"
-                placeholder="(99) 9 9999-9999"    
-            >
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="email">E-mail</label>
-                <span>*</span>
-            </div>
-            
-            <input 
-                type="email" 
-                name="email" 
-                id="email"
-                placeholder="Insira seu email"    
-            >
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="msg">Mensagem</label>
-                <span>*</span>
-            </div>
-            
-            <textarea 
-                name="msg" 
-                id="msg" 
-                cols="80" 
-                rows="5"
-                placeholder="Informe o que deseja"
-            ></textarea>
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="lingua">Língua</label>
-            </div>
-            
-            <select name="lingua" id="lingua">
-                <option value="pt" selected>Português (pt-br)</option>
-                <option value="ing">Inglês</option>
-                <option value="esp">Espanhol</option>
-                <option value="fr">Francês</option>
-            </select>
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="proposito">Propópsito (Requisitos)</label>
-            </div>
-            
-            <input 
-                type="file" 
-                name="file" 
-                id="file"
-            >
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="linguagens">As linguagens que você prefere?</label>
-            </div>
-            
-            
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="db">Banco de Dados</label>
-            </div>
-            
-            <input type="radio" name="db" value="mysql" checked>MySQL | 
-            <input type="radio" name="db" value="postgress">PostgreSQL | 
-            <input type="radio" name="db" value="mongodb">MongoDB | 
-            <input type="radio" name="db" value="n/a">N/A | 
-            <input type="radio" name="db" value="outra">Outra
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="turno_reuniao">Turno para Reuniões</label>
-                <span>*</span>
-            </div>
-            
-            <input type="checkbox" name="turno_reuniao"  id="turno_manha">Manhã | 
-            <input type="checkbox" name="turno_reuniao"  id="turno_tarde">Tarde |
-            <input type="checkbox" name="turno_reuniao"  id="turno_noite">Noite 
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="horario">Horário Sugerido</label>
-            </div>
-            
-            <input type="time" name="horario" id="horario">
-        </div>
-
-        <div class="flex">
-            <div>
-                <label for="data">Data Prevista Entrega</label>
-                <span>*</span>
-            </div>
-            
-            <input type="date" name="data" id="data">
-        </div>
-
-        <div class="flex">
-            <button type="submit" id="btn-sub" class="btn" onclick="saveData()"> Enviar</button>
-            <button id="btn-clear" class="btn" onclick="clearData()">Limpar</button>
-        </div>
-
-        <div id="inf">
-            <span>*</span>
-            <p>Campos Obrigatórios</p>
-        </div>
+        </form>
     </fieldset>
 
 
