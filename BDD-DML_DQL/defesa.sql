@@ -234,3 +234,84 @@ INSERT INTO MILITAR (NOME, DATA_NASCIM, NUM_IDENT_MIL, FORCA_EMIS_IDENT_MIL, DAT
 				   ('Thyago Melo'            , '1992/07/15', 444753, "AER", "2003/11/11",  2300.00, 61),
                    ("MARCIO LIMA"            , "2002/05/04", 100111, "AER", "2021/07/15",  2000.00, 63),
                    ("MARIA JOSE"             , "2002/08/18", 700777, "AER", "2022/01/09",  2000.00, 63);
+		   
+CREATE TABLE REGIAO 	(ID_REGIAO INTEGER AUTO_INCREMENT,
+						 NOME VARCHAR(50),
+                         PRIMARY KEY(ID_REGIAO));
+                         
+INSERT INTO REGIAO  (NOME)
+			VALUE   ("Norte"),
+					("Nordeste"),
+					("Centro-Oeste"),
+					("Sudeste"),
+					("Sul");
+ 
+ DROP TABLE CIDADE;
+ 
+CREATE TABLE CIDADE (ID_CIDADE INT AUTO_INCREMENT,
+					 NOME VARCHAR(50),
+                     UF   CHAR(2),
+                     CAPITAL CHAR(1),
+                     ID_REGIAO INT,
+                     PRIMARY KEY(ID_CIDADE),
+                     FOREIGN KEY(ID_REGIAO) REFERENCES REGIAO(ID_REGIAO));
+       
+INSERT INTO CIDADE (NOME, UF, CAPITAL, ID_REGIAO)
+             VALUE 	("Rio Branco"             , "AC", "S", 1),
+					("Macapá"                 , "AP", "S", 1),
+					("Manaus"                 , "AM", "S", 1),
+					("Maceió"                 , "AL", "S", 2),
+					("Salvador"               , "BA", "S", 2),
+					("Fortaleza"              , "CE", "S", 2),
+					("Vitória"                , "ES", "S", 4),
+					("São Luís"               , "MA", "S", 2),
+					("Belo Horizonte"         , "MG", "S", 4),
+					("Belém"                  , "PA", "S", 1),
+					("João Pessoa"            , "PB", "S", 2),
+					("Curitiba"               , "PR", "S", 5),
+					("Recife"                 , "PE", "S", 2),
+					("Teresina"               , "PI", "S", 2),
+					("Rio de Janeiro"         , "RJ", "S", 4),
+					("Natal"                  , "RN", "S", 2),
+					("Porto Alegre"           , "RS", "S", 5),					
+					("Porto Velho"            , "RO", "S", 1),
+					("Boa Vista"              , "RR", "S", 1),
+					("Florianópolis"          , "SC", "S", 5),
+					("São Paulo"              , "SP", "S", 4),
+					("Aracaju"                , "SE", "S", 2),
+					("Palmas"                 , "TO", "S", 1),
+
+					("Olinda"                 , "PE", "N", 2),
+					("Cabo"                   , "PE", "N", 2),
+					("Jaboatão dos Guararapes", "PE", "N", 2),
+
+					("Santos"                 , "SP", "N", 4),
+					("Guarulhos"              , "SP", "N", 4),
+					("Praia Grande"           , "SP", "N", 4),
+					("Rio Claro"              , "SP", "N", 4),
+					("Araras"                 , "SP", "N", 4);
+					
+					
+CREATE TABLE QUARTEL (	ID_QUARTEL INT AUTO_INCREMENT,
+                        NOME VARCHAR(50),
+						ID_FORCA_ARMADA INT,
+						ID_CIDADE INT,
+                        PRIMARY KEY (ID_QUARTEL),
+                        FOREIGN KEY(ID_FORCA_ARMADA) REFERENCES FORCA_ARMADA(ID_FORCA_ARMADA),
+                        FOREIGN KEY(ID_CIDADE) REFERENCES CIDADE(ID_CIDADE));
+
+INSERT INTO QUARTEL (NOME, ID_FORCA_ARMADA, ID_CIDADE)
+		VALUE ("4° Batalhão de Comunicações", 2, 17),
+		      ("2ª Companhia de Guardas", 2, 17),
+		      ("3º Centro de Geoinformação", 1, 28),
+		      ("14ª Bateria de Artilharia Antiaérea", 3, 30),
+		      ("12º Grupo de Artilharia de Campanha", 1, 25),
+		      ("2ª Companhia de Transporte", 1, 25),
+		      ("11º Pelotão de Polícia do Exército", 2, 25),
+		      ("3ª Companhia de Inteligência", 2, 25),
+		      ("Comando da 1ª Brigada de Artilharia Antiaérea", 2, 25),
+		      ("Escola de Instrução Militar", 3, 25),
+		      ("Indústria de Material Bélico do Brasil", 3, 25),
+              
+   		      ("2ª Companhia de Transporte", 2, 28),
+   		      ("2º Batalhão Logístico Leve", 3, 31);
