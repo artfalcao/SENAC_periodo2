@@ -8,19 +8,21 @@ public class Cliente {
     private String email;
     private String telefone;
     private Date dataNasc;
+    private Endereco endereco;
 
     // Construtor Vazio - Para executar testes
     public Cliente() {
 
     }
 
-    // Constructor Full - Para gerar automático clicar Ctrl+.
-    public Cliente(String nome, String cpf, String email, String telefone, Date dataNasc) {
+    // Constructor Full - Para gerar automático clicar "Ctrl" + "."
+    public Cliente(String nome, String cpf, String email, String telefone, Date dataNasc, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.telefone = telefone;
         this.dataNasc = dataNasc;
+        this.endereco = endereco;
     }
 
     // Getters
@@ -44,6 +46,10 @@ public class Cliente {
         return dataNasc;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
     // Setters
     public void setEmail(String email) {
         // Tratando Errors
@@ -65,4 +71,9 @@ public class Cliente {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
 }

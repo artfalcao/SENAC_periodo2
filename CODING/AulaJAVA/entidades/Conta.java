@@ -10,7 +10,6 @@ public class Conta {
 
     // Constructor Vazio
     public Conta() {
-
     }
 
     // Constructor Full
@@ -58,19 +57,47 @@ public class Conta {
     }
 
     // Métodos Depositar / Sacar
-    public double depositar(Float valor) {
-        saldo = this.saldo + valor;
-        return saldo;
+    public boolean depositar(double valor) {
+        if (valor > 0) {
+            this.saldo += valor;
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
-    public double sacar(Float valor) {
-        saldo = this.saldo - valor;
-        return saldo;
+    public boolean sacar(double valor) {
+        if (this.saldo + this.limite >= valor) {
+            this.saldo -= valor;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Método p/ Transferência
+    public boolean transferir(double valor, Conta contaFav) {
+        if (contaFav != null) {
+            if (this.saldo + this.limite >= valor) {
+                this.saldo -= valor;
+                contaFav.saldo += valor;
+                return true;
+            } else {
+                return alse;
+            }
+        } else {
+            return false;
+        }
     }
 
     // Método Encerrar Conta
     protected void encerrarConta() {
         status = false;
+    }
+
+    public String toString() {
+        return "Cliente: " + this.cliente.getNome() + " | " + "Telefone: " + this.cliente.getTelefone();
     }
 
 }

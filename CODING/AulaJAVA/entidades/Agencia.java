@@ -4,17 +4,20 @@ public class Agencia {
     private String numeroAgencia;
     private String telefone;
     private String email;
+    private Endereco endereco;
 
-    public Agencia() {}
-    
-    //Constructor
-    public Agencia(String numeroAgencia, String telefone, String email) {
+    public Agencia() {
+    }
+
+    // Constructor
+    public Agencia(String numeroAgencia, String telefone, String email, Endereco endereco) {
         this.numeroAgencia = numeroAgencia;
         this.telefone = telefone;
         this.email = email;
+        this.endereco = endereco;
     }
 
-    //Getters
+    // Getters
     public String getNumeroAgencia() {
         return numeroAgencia;
     }
@@ -27,7 +30,11 @@ public class Agencia {
         return email;
     }
 
-    //Setters
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    // Setters
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
@@ -36,7 +43,8 @@ public class Agencia {
         this.email = email;
     }
 
-    
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 
-    
 }
