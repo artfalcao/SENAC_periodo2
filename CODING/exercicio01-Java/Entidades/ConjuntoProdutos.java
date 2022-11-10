@@ -69,12 +69,12 @@ public class ConjuntoProdutos {
         return changedProduct;
     }
     
-    public boolean atualizarPrecoPorcentagem(String nomeProduto) {
+    public boolean atualizarPrecoPorcentagem(int codigoProduto) {
         
         boolean changedPriceProduct = false;
         
         for (Produto produto : produtos) {
-            if (produto.getNome() == nomeProduto) {
+            if (produto.getCodigo() == codigoProduto) {
                 // Alterar VALOR POR PORCENTAGEM
                 System.out.println("Qual o novo valor de porcentagem? ");
                 Scanner valorPorcento = new Scanner(System.in);
