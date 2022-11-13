@@ -1,92 +1,56 @@
 package Entidades;
 
-import java.util.Scanner;
 import java.util.ArrayList;
 
 public class ConjuntoProdutos {
-        private ArrayList<Produto> produtos; 
+    private ArrayList<Produto> produtos;
 
     public ConjuntoProdutos() {
+        this.produtos = new ArrayList<Produto>();
     }
 
-    public ConjuntoProdutos(ArrayList<Produto> produtos) {
-        this.produtos = produtos;
+    public boolean adicionarProdutos(Produto produto) {
+        return this.produtos.add(produto);
     }
 
-    public void adicionarProdutos(Produto produto){
-        produtos.add(produto);
+    public boolean removerProduto(int codigo) {
+        for (Produto produto : produtos) {
+            if (produto.getCodigo() == codigo) {
+                return this.produtos.remove(produto);
+            }
+        }
+        return false;
     }
 
-    public void removerProduto(int i){
-        produtos.remove(i);
-    }
-
-    public String mostrarProdutos(){
+    public String mostrarProdutos() {
 
         String produtosExibidos = "";
 
-        if (produtos.size() == 0) {
+        if (this.produtos.size() == 0) {
             return "Nenhum produto adicionado!";
         } else {
             for (Produto produto : produtos) {
-                produtosExibidos += produto.toString()+ "\n";
+                produtosExibidos += produto.toString() + "\n";
             }
-    
             return produtosExibidos;
         }
     }
 
-    public boolean atualizarProduto(int codigoProduto){
-
-        boolean changedProduct = false;
-
-        for (Produto produto : produtos) {
-            if (produto.getCodigo() == codigoProduto) {
-                // Alterar CODIGO
-                System.out.println("Qual o novo código? ");
-                Scanner codigo = new Scanner(System.in);
-                String novoCodigo = codigo.next();
-                int codigoConvertido = Integer.parseInt(novoCodigo);
-                produto.setCodigo(codigoConvertido);
-                
-                // Alterar NOME
-                System.out.println("Qual o novo nome? ");
-                Scanner nome = new Scanner(System.in);
-                String novoNome = nome.next();
-                produto.setNome(novoNome);
-                 
-                // Alterar VALOR
-                System.out.println("Qual o novo valor? ");
-                Scanner valor = new Scanner(System.in);
-                String novoValor = valor.next();
-                double valorConvertido = Double.parseDouble(novoValor);
-                produto.setValor(valorConvertido);
-                
-                changedProduct = true;
+    public boolean atualizarProduto(Produto produto) {
+        for (Produto prod : produtos) {
+            if (prod.getCodigo() == produto.getCodigo()) {
+                this.produtos.set(this.produtos.indexOf(prod), produto);
+                return true;
             }
-        } 
-
-        return changedProduct;
+        }
+        return false;
     }
-    
-    public boolean atualizarPrecoPorcentagem(int codigoProduto) {
-        
-        boolean changedPriceProduct = false;
-        
-        for (Produto produto : produtos) {
-            if (produto.getCodigo() == codigoProduto) {
-                // Alterar VALOR POR PORCENTAGEM
-                System.out.println("Qual o novo valor de porcentagem? ");
-                Scanner valorPorcento = new Scanner(System.in);
-                String novoValor = valorPorcento.next();
-                double valorConvertido = Double.parseDouble(novoValor);
-                produto.atualizaPreco(valorConvertido);
 
-                changedPriceProduct = true;
-            }
-        } 
-        
+    public boolean atualizarPrecoPorcentagem(double percentual) {
 
-        return changedPriceProduct;
+        for (Produto prod : produtos) {
+            prod.atualizaPreco(percentual);
+        }
+        return true;
     }
 }
